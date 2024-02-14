@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -11,17 +11,20 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
     />
+    
     <!-- fontawesome 폰트어썸 -->
     <script
       src="https://kit.fontawesome.com/5cad1f58b8.js"
       crossorigin="anonymous"
     ></script>
+        <!-- CSS-->
+        <link rel="stylesheet" href="css/style.css" />
     <!-- 자바스크립트,제이쿼리 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.5/ScrollTrigger.min.js"></script>
-    <!-- CSS-->
-    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
     <script type="module" src="src/main.js " defer></script>
   </head>
   <body>
@@ -2416,8 +2419,8 @@
 
           <div class="partner_container">
             <ul class="partner_wrap">
-              <li class="partner_wrap_list">
-                <div data-trigger  class="partner_wrap_list_inr">
+              <li data-scroll class="partner_wrap_list">
+                <div class="partner_wrap_list_inr">
                   <img
                     class="partner_wrap_list_inr_img"
                     src="greek_images/img_partner_b2b1.jpg"
@@ -2429,7 +2432,7 @@
                   </p>
                 </div>
               </li>
-              <li class="partner_wrap_list">
+              <li data-scroll class="partner_wrap_list">
                 <div class="partner_wrap_list_inr">
                   <img
                     class="partner_wrap_list_inr_img"
@@ -2442,7 +2445,7 @@
                   </p>
                 </div>
               </li>
-              <li class="partner_wrap_list">
+              <li data-scroll class="partner_wrap_list">
                 <div class="partner_wrap_list_inr">
                   <img
                     class="partner_wrap_list_inr_img"
@@ -2709,4 +2712,7 @@
       </div>
     </footer>
   </body>
+  <script>
+    ScrollOut({});
+  </script>
 </html>

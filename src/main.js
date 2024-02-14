@@ -15,6 +15,3 @@ $(function () {
       $(this).find(".brand_btn_pointer").css({ top: relY, left: relX });
     });
 });
-
-const trigger = new scrollTrigger.default();
-trigger.add("[data-trigger]");

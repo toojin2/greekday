@@ -492,20 +492,19 @@ img {
   height: 100%;
   position: relative;
   overflow: hidden;
+  border: 1px solid yellowgreen;
 }
 .banner_img_middle {
   position: absolute;
   top: 10%;
   left: 50%;
-  transform: translateX(-50%) scale(1.2);
-  animation: slidup 1s ease 0.3s 1 both running;
+  transform: translateX(-50%) scale(1.1);
 }
 .banner_img_bottom {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -30%) scale(1.1);
-  animation: slidup 1s ease 0.8s 1 both running;
 }
 /* 브랜드 */
 #brand {
@@ -664,11 +663,12 @@ img {
 }
 .partner_wrap_list {
   width: 100%;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 .partner_wrap_list:hover {
   transform: translateY(-1rem);
 }
+
 .partner_wrap_list_inr {
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 4px 15px 0 rgba(31, 38, 135, 0.37);
@@ -818,20 +818,6 @@ img {
   display: flex;
   justify-content: space-between;
   padding: 2rem 0 5rem 0;
-}
-[data-scroll] {
-  opacity: 0;
-  will-change: transform, scale, opacity;
-  transform: translateY(6rem) scale(0.93);
-  transition: all 1.5s ease;
-}
-
-[data-scroll="in"] {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-[data-scroll="out"] {
-  opacity: 0;
 }
 /* 애니메이션 */
 /* 정기배송트럭 */

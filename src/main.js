@@ -1,6 +1,15 @@
-//https://wsss.tistory.com/479
-//버튼 호버시 효과
+"use strict";
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   let docElement = document.docElement;
+//   window.addEventListener("scroll", function () {
+//     let scrollAmount = docElement.scrolltop; //문서의 스크롤양
+//     console.log(scrollAmount);
+//   });
+// });
+
 $(function () {
+  //버튼 호버시 효과
   $(".brand_btn")
     .on("mouseenter", function (e) {
       var parentOffset = $(this).offset(),

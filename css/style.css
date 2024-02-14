@@ -80,6 +80,7 @@ img {
 .title {
   display: block;
   font-size: 2.3rem;
+  font-weight: 500;
   margin-top: 4rem;
   padding: 3rem 0;
   color: var(--color-accent);
@@ -123,12 +124,16 @@ img {
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 9;
+  z-index: 11;
   transition: all 0.5s ease;
   background: transparent;
 }
 #header.active {
-  background: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(255, 225, 235, 1)
+  );
   box-shadow: 0 2px 5px 0 rgba(42, 48, 133, 0.37);
 }
 .header,
@@ -156,16 +161,16 @@ img {
 }
 #logo {
   display: block;
-  padding: 10px;
+  padding: 8px;
 }
 .logo_img {
-  width: 70px;
-  height: 71px;
+  width: 58px;
+  height: 60px;
 }
 #header_icons {
   display: flex;
   gap: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 .header_icon {
   color: var(--color-primary-variant);
@@ -182,10 +187,10 @@ img {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  font-weight: 600;
+  font-weight: 500;
 }
 .navi_list {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 1rem 1rem;
   white-space: nowrap;
 }
 .navi_list_txt {
@@ -427,21 +432,16 @@ img {
 }
 /* 배너 */
 #greek_banner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-#greek_banner::before {
-  content: "";
-  display: block;
   width: 100vw;
   height: 100%;
-  background: linear-gradient(-90deg, transparent 0%, #d3e3fd 90%);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  position: relative;
+  background: linear-gradient(-90deg, transparent, #d3e3fd);
+  transition: 0.5s;
 }
+#greek_banner.active {
+  background: linear-gradient(-90deg, transparent, #ffe1eb);
+}
+
 .greek_banner {
   width: 100%;
   height: 100%;
@@ -461,12 +461,14 @@ img {
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
+  z-index: 9;
 }
 .banner_slide1,
 .banner_slide2 {
   flex: 1 0 100%;
   display: flex;
   align-items: center;
+  transition: 0.5s;
 }
 .banner_metadata {
   flex: 1;
@@ -492,19 +494,27 @@ img {
   height: 100%;
   position: relative;
   overflow: hidden;
-  border: 1px solid yellowgreen;
 }
 .banner_img_middle {
   position: absolute;
   top: 10%;
   left: 50%;
   transform: translateX(-50%) scale(1.1);
+  opacity: 0;
 }
 .banner_img_bottom {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -30%) scale(1.1);
+  opacity: 0;
+}
+.banner_img_middle.animate,
+.banner_img_bottom.animate,
+.banner2_img_middle.animate,
+.banner2_img_bottom.animate {
+  opacity: 1;
+  animation: slidup 1.5s ease;
 }
 /* 브랜드 */
 #brand {
@@ -513,7 +523,7 @@ img {
 .brand_container {
 }
 .brand_title {
-  color: #ffaec9;
+  color: #ff85ae;
 }
 .brand_title::before,
 .brand_title::after {
@@ -634,13 +644,11 @@ img {
 /* parter */
 #partner {
   width: 100%;
-  max-height: 100vh;
 }
 .partner {
   width: 100%;
   height: 100%;
   margin: auto;
-  border: 2px solid yellow;
 }
 .partner_title {
   color: var(--color-primary-variant);
@@ -664,11 +672,14 @@ img {
 .partner_wrap_list {
   width: 100%;
   transition: transform 0.3s ease;
+  opacity: 0;
 }
 .partner_wrap_list:hover {
   transform: translateY(-1rem);
 }
-
+.partner_wrap_list.animate {
+  animation: slidup 1.5s ease;
+}
 .partner_wrap_list_inr {
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 4px 15px 0 rgba(31, 38, 135, 0.37);
@@ -735,7 +746,6 @@ img {
 .grk_sns {
   width: 100%;
   height: 100%;
-  border: 1px solid red;
   text-align: center;
 }
 .grk_sns_title {
@@ -756,9 +766,8 @@ img {
 .grk_sns_inr {
   width: 100%;
   height: 100%;
-  padding: 1.5rem 0;
-  border: 1px solid black;
-  margin: 3rem 0;
+  padding: 1.5rem 0 6rem 0;
+  margin: 3rem 0 0 0;
 }
 .grk_sns_inr_wrap {
   width: 100%;

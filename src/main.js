@@ -10,14 +10,15 @@ window.addEventListener("scroll", function () {
 });
 
 let windowHeight = window.innerHeight;
-const partner = document.querySelector(".partner_wrap_list");
+const partnerCon = document.querySelector(".partner_container");
+const partner = document.querySelectorAll(".partner_wrap_list");
 const bannerImg1 = document.querySelector(".banner_img_middle");
 const bannerImg2 = document.querySelector(".banner_img_bottom");
 
 // 스크롤시 배너 슬라이드업 애니메이션
 const homeEventHandler = () => {
   // window 화면 상단에서 한 요소의 가장 높은 위치까지 크기와 윈도우 높이를 비교
-  console.log(partner.getBoundingClientRect().top, windowHeight);
+  //console.log(partnerCon.getBoundingClientRect().top, windowHeight);
 
   if (bannerImg1.getBoundingClientRect().top - 100 < windowHeight) {
     setTimeout(() => {
@@ -27,10 +28,19 @@ const homeEventHandler = () => {
         bannerImg2.classList.add("animate");
       }, 600);
     }, 300);
-    // 성능 최적화를 위하여 한번 사용한 eventListener를 제거 => 딱 한번만 동작하게 됨
-    window.removeEventListener("scroll", homeEventHandler);
-  } else if (partner.getBoundingClientRect().top - 100 > windowHeight) {
-    partner.classList.add("animate");
+  }
+  if (partnerCon.getBoundingClientRect().top - 650 < windowHeight) {
+    for (let i = 0; i < partner.length; i++) {
+      setTimeout(() => {
+        partner[0].classList.add("animate");
+        setTimeout(() => {
+          partner[1].classList.add("animate");
+          setTimeout(() => {
+            partner[2].classList.add("animate");
+          }, 1200);
+        }, 800);
+      }, 400);
+    }
   }
 };
 window.addEventListener("scroll", homeEventHandler);
@@ -88,4 +98,14 @@ $(function () {
         relY = e.pageY - parentOffset.top;
       $(this).find(".brand_btn_pointer").css({ top: relY, left: relX });
     });
+
+  /*header메뉴펼치는 제이쿼리*/
+  $(".navi").on("mouseover", function () {
+    $(this).find(".navi_wrap").stop().slideDown(200);
+    $(this).parents(".header2").addClass("active");
+  });
+  $(".navi").on("mouseout", function () {
+    $(this).find(".navi_wrap").stop().slideUp(200);
+    $(this).parents(".header2").removeClass("active");
+  });
 });

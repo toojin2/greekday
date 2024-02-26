@@ -188,15 +188,15 @@ $(function () {
   });
   $(".menu_icon").on("click", function () {
     if ($(window).innerWidth() < 1024) {
-      $(this).stop().toggle();
+      $(this).stop().addClass();
       $(".x_icon").css({ display: "block" });
-      $(".header2").animate({ right: "0" }, 450, "swing");
+      $(".header2").addClass("animate");
     }
   });
   $(".x_icon").on("click", function () {
     $(this).stop().toggle();
     $(".menu_icon").css({ display: "block" });
     $(".navi_wrap").stop().slideUp();
-    $(".header2").animate({ right: "-100vw" }, 450, "swing");
+    $(".header2").removeClass("animate");
   });
 });

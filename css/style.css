@@ -1099,10 +1099,9 @@ img {
     min-height: 190px;
   }
   /* 배너 */
-  #greek_banner {
-  }
+
   .banner_slide {
-    height: 70vh;
+    height: auto;
     min-height: 70vh;
   }
   .banner_slide1,
@@ -1262,7 +1261,6 @@ img {
     flex: 1 0 50%;
   }
   /* sns */
-
   .grk_sns_inr_wrap_list {
     flex: 1 0 33%;
   }

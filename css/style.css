@@ -767,7 +767,7 @@ img {
 }
 .partner_wrap_list.animate {
   opacity: 1;
-  animation: trans 1.5s ease;
+  animation: trans 0.6s ease;
 }
 
 .partner_wrap_list_inr {

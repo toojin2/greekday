@@ -1119,6 +1119,7 @@ img {
   .banner_img {
     flex: 4;
     overflow: visible;
+    min-height: 300px;
   }
   .banner_img_bottom {
     transform: translate(-50%, -30%) scale(0.9);

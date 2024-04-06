@@ -919,6 +919,7 @@ img {
   border-right: 0;
 }
 .footer_icon {
+  margin: auto;
   width: 68px;
 }
 
